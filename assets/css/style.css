@@ -166,7 +166,7 @@ p {
 
 /*===== All Section Title Style =====*/
 .section-title .title {
-  font-size: 50px; 
+  font-size: 40px; 
 }
 @media (max-width: 767px) {
   .section-title .title {
@@ -608,46 +608,48 @@ p {
           -moz-transition: all 0.3s ease-out 0s;
           -ms-transition: all 0.3s ease-out 0s;
           -o-transition: all 0.3s ease-out 0s;
-          transition: all 0.3s ease-out 0s; }
-          @media only screen and (min-width: 768px) and (max-width: 991px) {
-            .navbar-area .navbar .navbar-nav .nav-item a::before {
-              display: none; } }
-          @media (max-width: 767px) {
-            .navbar-area .navbar .navbar-nav .nav-item a::before {
-              display: none; } }
+          transition: all 0.3s ease-out 0s; 
+        }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .navbar-area .navbar .navbar-nav .nav-item a::before {
+            display: none; } 
           .navbar-area .navbar .navbar-nav .nav-item a {
             padding: 10px 0;
-            display: block; } }
+            display: block; } 
+        }
         @media (max-width: 767px) {
+          .navbar-area .navbar .navbar-nav .nav-item a::before {
+            display: none; 
+          } 
           .navbar-area .navbar .navbar-nav .nav-item a {
             padding: 10px 0;
-            display: block; } }
+            display: block; 
+          } 
+      }
       .navbar-area .navbar .navbar-nav .nav-item.active > a::before, .navbar-area .navbar .navbar-nav .nav-item:hover > a::before {
         width: 100%; 
       }
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .navbar-area .navbar .navbar-btn {
-          position: absolute;
-          right: 70px;
-          top: 30px; } 
-      }
+      @media only screen and (min-width: 991px) and (max-width: 1200px) {
+      .navbar-area .navbar .navbar-btn .main-btn {
+        display:none;} 
+      }/*
       @media (max-width: 767px) {
         .navbar-area .navbar .navbar-btn {
           position: absolute;
           right: 60px;
           top: 30px; } 
-      }  
+      }   */
     .navbar-area .navbar .navbar-btn .main-btn:hover {
       background-color: #004080;
       border-radius: 5px;
       color:white;
     }
-    /*===== Header =====*/
+
+/*===== Header =====*/
 .header-content-area {
   height: 750px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  /* border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
   position: relative;
   overflow: hidden; 
 }
@@ -765,25 +767,16 @@ margin-top: 60px; }
 /*===========================
       3.ABOUT css 
 ===========================*/
-
-.about-image img {
-  width: 100%; 
-}
-.about_img_div, .about_divs{
-  width:50%;
+#about{
+  background-image: url('../images/page-02_Background.jpeg');
+  background-blend-mode:multiply;
 }
 
-@media(max-width:1000px){
-  .about_img_div, .about_divs{
-    width:100%;
-  }
-  .outer{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+@media screen and (max-width:770px){
+  .tff{
+    margin-top: 50px;
   }
 }
-
 
 .about-content .date {
   font-size: 18px;
@@ -811,6 +804,107 @@ margin-top: 60px; }
 .about_ul li{
   margin-bottom: 20px;
 }
+
+/*     11. Video     */
+/*********************/
+.basic-4 {
+	padding-top: 4rem;
+	padding-bottom: 3rem;
+}
+
+.basic-4 h2 {
+	margin-bottom: 2.75rem;
+	text-align: center;
+}
+
+.basic-4 .image-container {
+	margin-bottom: 2rem;
+}
+
+.basic-4 .image-container img {
+	border-radius: 0.75rem;
+}
+
+.basic-4 .video-wrapper {
+	position: relative;
+}
+
+/* Video Play Button */
+.basic-4 .video-play-button {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	display: block;
+	box-sizing: content-box;
+	width: 2rem;
+	height: 2.75rem;
+	padding: 1.125rem 1.25rem 1.125rem 1.75rem;
+	border-radius: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+  
+.basic-4 .video-play-button:before {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 4.75rem;
+	height: 4.75rem;
+	border-radius: 50%;
+	background: #ff0000;
+	animation: pulse-border 1500ms ease-out infinite;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+  
+.basic-4 .video-play-button:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 4.375rem;
+	height: 4.375rem;
+	border-radius: 50%;
+	background: #ff0000;
+	transition: all 200ms;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+  
+.basic-4 .video-play-button span {
+	position: relative;
+	display: block;
+	z-index: 3;
+	top: 0.375rem;
+	left: 0.25rem;
+	width: 0;
+	height: 0;
+	border-left: 1.625rem solid #fff;
+	border-top: 1rem solid transparent;
+	border-bottom: 1rem solid transparent;
+}
+  
+@keyframes pulse-border {
+	0% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+		opacity: 0;
+	}
+}
+/* End of video play button */
+
 /*===========================
       4.COUNTER css 
 ===========================*/
@@ -965,6 +1059,7 @@ margin-top: 60px; }
       background: -webkit-linear-gradient(left, #004080 0%, #1664ff 100%);
       background: -o-linear-gradient(left, #004080 0%, #1664ff 100%);
       background: linear-gradient(to right, #004080 0%, #1664ff 100%);
+      border-radius: 15px;
       z-index: -1;
       opacity: 0;
       -webkit-transition: all 0.3s ease-out 0s;
@@ -1013,6 +1108,10 @@ margin-top: 60px; }
             margin-right: 0; }
     .event-tab .tab-content .event-content .single-event:hover::before {
       opacity: 1; }
+      .event-tab .tab-content .event-content .single-event .event-image .event-meta li {
+        color: rgb(24, 113, 221); }
+    .event-tab .tab-content .event-content .single-event:hover .event-image .event-meta li {
+        color: #fff; }
     .event-tab .tab-content .event-content .single-event:hover .event-content .event-title,
     .event-tab .tab-content .event-content .single-event:hover .event-content .text {
       color: #fff; }
