@@ -19,10 +19,10 @@
         }
 
         // Set the recipient email address.
-        $recipient = "techhacked2@gmail.com" //"festivalfablab@ucd.ac.ma";
+        $recipient = "techhacked2@gmail.com"; //"festivalfablab@ucd.ac.ma";
 
         // Set the email subject.
-        $subject = "New contact from $name";
+        //$subject = "New contact from $name";
 
         // Build the email content.
         $email_content = "First Name: $name\n";
