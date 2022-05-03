@@ -18,7 +18,7 @@ $(function() {
 		$.ajax({
 			url: $(form).attr('action'),
 			type: 'POST',
-			data: formData,
+			data: formData, 
 			success: (function(response) {
 				// Make sure that the formMessages div has the 'success' class.
 				$(formMessages).removeClass('error');
@@ -44,4 +44,5 @@ $(function() {
 			})
 		});
 	});
+
 });
