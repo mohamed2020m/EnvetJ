@@ -17,7 +17,7 @@ jours d’échange entre les FabLabs Universitaires et les acteurs des nouvelles
 Des démonstrations, conférences, ateliers, trophée pour créer des opportunités d’échanges.
 
 
-## Temps forts 2022
+# Temps forts 2022
 - Conférences animées par des personnalités du domaine.
 - Espace de démonstrations par les FabLabs Universitaires.
 - Stands et ateliers techniques animés par les exposants pour présenter des produits et solutions concrètes et favoriser les échanges techniques.
