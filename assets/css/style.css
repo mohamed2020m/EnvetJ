@@ -1083,7 +1083,9 @@ margin-top: 60px; }
           padding-left: 0;
           margin-top: 15px; } }
       .event-tab .tab-content .event-content .single-event .event-content .event-title {
-        font-size: 24px; }
+        font-size: 24px;
+        text-align: center; 
+      }
         @media (max-width: 767px) {
           .event-tab .tab-content .event-content .single-event .event-content .event-title {
             font-size: 18px; } }
@@ -1109,7 +1111,8 @@ margin-top: 60px; }
     .event-tab .tab-content .event-content .single-event:hover::before {
       opacity: 1; }
       .event-tab .tab-content .event-content .single-event .event-image .event-meta li {
-        color: rgb(24, 113, 221); }
+        color: rgb(24, 113, 221); 
+        text-decoration:underline dotted red 2px}
     .event-tab .tab-content .event-content .single-event:hover .event-image .event-meta li {
         color: #fff; }
     .event-tab .tab-content .event-content .single-event:hover .event-content .event-title,
@@ -1117,7 +1120,37 @@ margin-top: 60px; }
       color: #fff; }
     .event-tab .tab-content .event-content .single-event:hover .event-content .event-meta li {
       color: #fff; }
-
+    
+    .event-tab .tab-content .event-content .no-hover-conf::before{
+      background: #fce413 !important;
+    }
+    .event-tab .tab-content .event-content .no-hover::before{
+      background: rgb(145, 240, 121) !important;
+    }
+    .event-tab .tab-content .event-content .no-hover-conf:hover .media-body .event-title{
+      color:black !important;
+    }
+    .event-tab .tab-content .event-content .no-hover:hover .media-body .event-title{
+      color:#ee163a;
+    }
+    .event-tab .tab-content .event-content .no-hover:hover .event-image .event-meta li{
+      color:rgb(24, 113, 221);
+    }
+    .event-bg-color{
+      background-color: #fce413 !important;
+    }
+    .event-list{
+      list-style-type: disc !important;
+      padding-left:1em !important;
+      margin-left:1em;
+    }
+    .event-wrapper-pause{
+      background-color: rgb(145, 240, 121) !important;
+    }
+    .event-center-h4{
+      text-align: center;
+      color:#ee163a;
+    }
 /*===========================
       6.FEATURES css 
 ===========================*/
