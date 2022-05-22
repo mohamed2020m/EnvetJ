@@ -1111,8 +1111,7 @@ margin-top: 60px; }
     .event-tab .tab-content .event-content .single-event:hover::before {
       opacity: 1; }
       .event-tab .tab-content .event-content .single-event .event-image .event-meta li {
-        color: rgb(24, 113, 221); 
-        text-decoration:underline dotted red 2px}
+        color: rgb(24, 113, 221); }
     .event-tab .tab-content .event-content .single-event:hover .event-image .event-meta li {
         color: #fff; }
     .event-tab .tab-content .event-content .single-event:hover .event-content .event-title,
