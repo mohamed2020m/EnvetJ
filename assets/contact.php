@@ -1,5 +1,13 @@
 <?php
 
+    # Include the Autoloader (see "Libraries" for install instructions)
+    require 'vendor/autoload.php';
+    use Mailgun\Mailgun;
+    
+    # Instantiate the client.
+    $mgClient = Mailgun::create('8cfb285f6e96b3ed2673e5f8d861f47d-24e2ac64-6e766c17');
+    $domain = "sandbox3913f3671f734dc387680a14a075e6ac.mailgun.org";
+
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -14,12 +22,17 @@
         if ( empty($name) OR empty($subject) OR empty($number) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Please complete the form and try again.";
+            echo "Veuillez remplir le formulaire et réessayer.";
+            exit;
+        }
+        if (preg_match('/^0(5|6|7){1}[0-9]{8}+$/', $number)){
+            http_response_code(400);
+            echo "Veuillez enter une numéro valide!";
             exit;
         }
 
         // Set the recipient email address.
-        $recipient = "techhacked2@gmail.com"; //"festivalfablab@ucd.ac.ma";
+        $recipient = "mohamedessabir20@gmail.com"; //"festivalfablab@ucd.ac.ma";
 
         // Set the email subject.
         //$subject = "New contact from $name";
@@ -29,26 +42,32 @@
 
          // Build the email content.
         $email_content = "First Name: $name\n";
-        $email_content .= "Email: $email\n\n";
-        $email_content .= "Subject: $subject\n\n";
-        $email_content .= "Number: $number\n\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Number: $number\n";
         $email_content .= "Message:\n$message\n";
 
+       
         // Send the email.
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
-            // Set a 200 (okay) response code.
-            http_response_code(200);
-            echo "Thank You! Your message has been sent.";
-        } else {
-            // Set a 500 (internal server error) response code.
-            http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
-        }
+        $msg = $mgClient->messages()->send($domain, [
+            'from'=>$email,
+            'to'=> $recipient,
+            'subject' =>  $subject ,
+            'text' => $email_content
+        ]);
 
-    } else {
+        if($msg){
+            http_response_code(200);
+            echo "Votre message a été envoyé avec succès";
+        }
+        else{
+            http_response_code(500);
+            echo "Server Error!";
+        }
+    }
+    else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "There was a problem with your submission, please try again.";
+        echo "Il y a eu un problème avec votre soumission, veuillez réessayer.";
     }
 
 ?>
