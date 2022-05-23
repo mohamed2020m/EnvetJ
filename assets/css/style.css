@@ -940,29 +940,32 @@ margin-top: 60px; }
     5.EVENT SCHEDULE css 
 ===========================*/
 .event-tab {
-  border: 3px solid rgba(24, 99, 255, 0.1);
-  padding: 40px 70px; }
+  /* border: 3px solid rgba(24, 99, 255, 0.1); */
+  padding: 40px 70px;
+  }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .event-tab {
       padding: 40px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .event-tab {
       padding: 30px; } }
+
   @media (max-width: 767px) {
     .event-tab {
       padding: 10px;
-      padding-top: 0; } }
-  @media (max-width: 767px) {
+      padding-top: 0; }
     .event-tab .nav .nav-item {
       width: 48%;
-      margin-top: 10px; } }
+      margin-top: 10px; } 
+    }
   .event-tab .nav .nav-item a {
     text-align: center;
     width: 225px;
     border: 3px solid rgba(24, 99, 255, 0.1);
     padding: 15px 0;
     position: relative;
-    z-index: 5; }
+    z-index: 5; 
+  }
     @media only screen and (min-width: 992px) and (max-width: 1200px) {
       .event-tab .nav .nav-item a {
         width: 200px; } }
@@ -1067,9 +1070,6 @@ margin-top: 60px; }
       -ms-transition: all 0.3s ease-out 0s;
       -o-transition: all 0.3s ease-out 0s;
       transition: all 0.3s ease-out 0s; }
-    @media (max-width: 767px) {
-      .event-tab .tab-content .event-content .single-event .event-image img {
-        width: 100%; } }
     .event-tab .tab-content .event-content .single-event .event-content {
       padding-left: 30px; }
       @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1081,10 +1081,11 @@ margin-top: 60px; }
       @media (max-width: 767px) {
         .event-tab .tab-content .event-content .single-event .event-content {
           padding-left: 0;
-          margin-top: 15px; } }
+          /* margin-top: 15px;  */
+        } }
       .event-tab .tab-content .event-content .single-event .event-content .event-title {
         font-size: 24px;
-        text-align: center; 
+        margin-left: 1rem;
       }
         @media (max-width: 767px) {
           .event-tab .tab-content .event-content .single-event .event-content .event-title {
@@ -1102,7 +1103,8 @@ margin-top: 60px; }
           @media only screen and (min-width: 992px) and (max-width: 1200px) {
             .event-tab .tab-content .event-content .single-event .event-content .event-meta li {
               font-size: 14px;
-              margin-right: 10px; } }
+              margin-right: 10px;
+            border:1px solid red; } }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
             .event-tab .tab-content .event-content .single-event .event-content .event-meta li {
               font-size: 14px; } }
@@ -1122,6 +1124,9 @@ margin-top: 60px; }
     
     .event-tab .tab-content .event-content .no-hover-conf::before{
       background: #fce413 !important;
+    }
+    .event-tab .tab-content .event-content .no-hover-conf .media-body .event-title{
+       text-align: center;
     }
     .event-tab .tab-content .event-content .no-hover::before{
       background: rgb(145, 240, 121) !important;
@@ -1147,9 +1152,19 @@ margin-top: 60px; }
       background-color: rgb(145, 240, 121) !important;
     }
     .event-center-h4{
-      text-align: center;
       color:#ee163a;
     }
+
+/* Start*/
+@media only screen and (max-width:991px){
+  .challenge-img{
+    max-width: 100%;
+  }
+  .challenge-img img{
+    max-width: 70%;
+  }
+}
+/* End */
 /*===========================
       6.FEATURES css 
 ===========================*/
