@@ -5,8 +5,8 @@
     use Mailgun\Mailgun;
     
     # Instantiate the client.
-    $mgClient = Mailgun::create('8cfb285f6e96b3ed2673e5f8d861f47d-24e2ac64-6e766c17');
-    $domain = "sandbox3913f3671f734dc387680a14a075e6ac.mailgun.org";
+    $mgClient = Mailgun::create(process.env.API_KEY);
+    $domain = process.env.Domain;
 
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
