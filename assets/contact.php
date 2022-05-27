@@ -32,7 +32,7 @@
         }
 
         // Set the recipient email address.
-        $recipient = "mohamedessabir20@gmail.com"; //"festivalfablab@ucd.ac.ma";
+        $recipient = ""; //"festivalfablab@ucd.ac.ma";
 
         // Set the email subject.
         //$subject = "New contact from $name";
